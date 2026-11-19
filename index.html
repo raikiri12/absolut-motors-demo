@@ -13,7 +13,7 @@
   <meta property="og:title" content="Абсолют Моторс — автосервис на Озёрной">
   <meta property="og:description" content="Круглосуточный автосервис в Москве. Услуги, цены и маршрут.">
   <meta name="robots" content="noindex">
-  <link rel="stylesheet" href="styles.css?v=12">
+  <link rel="stylesheet" href="styles.css?v=13">
   <script src="booking.js?v=3" defer></script>
 </head>
 <body>
@@ -123,7 +123,7 @@
           <p class="booking-call">Можно позвонить круглосуточно <a href="tel:+79168058204">+7 (916) 805-82-04</a></p>
         </div>
         <div class="booking-panel">
-          <form class="booking-form" method="post" aria-describedby="booking-hint" hidden>
+          <form class="booking-form" method="post" hidden>
             <div class="booking-field">
               <label for="booking-name">Ваше имя</label>
               <input id="booking-name" name="customerName" autocomplete="name" maxlength="80" required>
@@ -137,7 +137,16 @@
               <textarea id="booking-work" name="work" rows="2" maxlength="350"></textarea>
             </div>
             <button class="button button-primary" type="submit">Записаться</button>
-            <p class="booking-hint" id="booking-hint">Откроется чат сервиса в Telegram с вашим именем, номером телефона и описанием работ. Нажмите «Отправить» в чате, чтобы передать заявку.</p>
+            <fieldset class="booking-consents" aria-label="Согласия" disabled>
+              <label>
+                <input type="checkbox">
+                <span>Согласие на <span class="consent-term">обработку персональных данных</span> и ознакомление с <span class="consent-term">политикой конфиденциальности</span></span>
+              </label>
+              <label>
+                <input type="checkbox">
+                <span>Согласие на получение информационных и рекламных рассылок</span>
+              </label>
+            </fieldset>
           </form>
           <a class="button button-secondary booking-fallback" href="https://t.me/absolut_motors">Открыть чат сервиса в Telegram</a>
         </div>
