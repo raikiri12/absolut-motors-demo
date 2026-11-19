@@ -270,8 +270,14 @@ img { display: block; width: 100%; height: auto; }
 .price-group:first-child { border-top: 1px solid var(--footer-edge); }
 
 @media (min-width: 761px) {
-  .price-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--inner-gap); }
-  .price-group { border-top: 1px solid var(--footer-edge); }
+  .price-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(6, auto);
+    grid-auto-flow: column;
+    column-gap: var(--inner-gap);
+  }
+  .price-group { display: contents; }
+  .price-group > a:first-child { border-top: 1px solid var(--footer-edge); }
 }
 
 @media (hover: hover) {
@@ -398,6 +404,18 @@ img { display: block; width: 100%; height: auto; }
   background: var(--surface);
 }
 .map-link { margin-top: var(--space-2); }
+
+@media (min-width: 761px) {
+  .visit { align-items: stretch; }
+  .visit-content, .visit-map {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .visit-route { margin-bottom: var(--space-2); }
+  .tour-link { margin-top: auto; }
+  .visit-map iframe { flex-grow: 1; }
+}
 
 .site-footer { position: relative; padding-block: 2.25rem 1.5rem; background: var(--ink); color: var(--white); }
 .site-footer :focus-visible { outline-color: var(--footer-focus); }
